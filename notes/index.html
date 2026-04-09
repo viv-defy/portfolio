@@ -1,0 +1,23 @@
+---
+title: Notes
+---
+
+<section class="card">
+  <h1>Notes</h1>
+  <p style="color: rgba(231, 235, 255, 0.72); margin: 0;">
+    Search across all notes and filter by tag. Tip: you can deep-link tags like
+    <code>/notes/#tag=jekyll</code>.
+  </p>
+
+  <div class="controls">
+    <input id="q" type="search" placeholder="Search notes..." autocomplete="off" />
+    <select id="tag">
+      <option value="">All tags</option>
+    </select>
+  </div>
+
+  <ul id="results" class="note-list" style="margin-top: 14px;"></ul>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/lunr/lunr.min.js"></script>
+<script src="/assets/js/notes.js"></script>

@@ -1,0 +1,20 @@
+<article class="note">
+  <header class="note-header">
+    <h1 class="note-title">{{ page.title }}</h1>
+    <div class="note-meta">
+      {% if page.date %}
+        <span>{{ page.date | date: "%Y-%m-%d" }}</span>
+      {% endif %}
+      {% if page.tags %}
+        <span class="note-tags">
+          {% for tag in page.tags %}
+            <a class="tag" href="/notes/#tag={{ tag | uri_escape }}">#{{ tag }}</a>
+          {% endfor %}
+        </span>
+      {% endif %}
+    </div>
+  </header>
+  <div class="note-content">
+    {{ content }}
+  </div>
+</article>

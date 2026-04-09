@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    {% include nav.html %}
+    <main class="container">
+      {{ content }}
+    </main>
+    <footer class="container footer">
+      <small>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</small>
+    </footer>
+  </body>
+</html>

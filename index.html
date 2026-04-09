@@ -1,1 +1,39 @@
-Hello World
+---
+title: Home
+---
+
+<section class="card hero">
+  <h1>Docs</h1>
+  <p>
+    This site is built for GitHub Pages and doubles as a searchable knowledge
+    base.
+  </p>
+</section>
+
+<section class="grid">
+  <div class="card">
+    <h2>Start here</h2>
+    <ul>
+      <li><a href="/notes/">Browse notes</a> (tags + full-text search)</li>
+      <li>
+        Add a new note by creating a Markdown file in <code>_notes/</code>.
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Latest notes</h2>
+    <ul class="note-list">
+      {% assign latest = site.notes | sort: "date" | reverse %} {% for note in
+      latest limit: 5 %}
+      <li>
+        <a href="{{ note.url }}">{{ note.title }}</a>
+        <div class="meta">
+          {% if note.date %}{{ note.date | date: "%Y-%m-%d" }}{% endif %} {% if
+          note.tags %} · {{ note.tags | join: ", " }}{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
